@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxwt6ucqjcy1k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_toyg7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t0fj7"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_xk577"]
+
+[sub_resource type="Sky" id="Sky_qjvbx"]
+sky_material = SubResource("PhysicalSkyMaterial_xk577")
+
+[sub_resource type="Environment" id="Environment_n3y72"]
+background_mode = 2
+sky = SubResource("Sky_qjvbx")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6242)
+mesh = SubResource("SphereMesh_toyg7")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transparency = 0.5
+mesh = SubResource("BoxMesh_t0fj7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.828287, -0.190895, 0.526783, -0.00966834, 0.935163, 0.354085, -0.560221, -0.298377, 0.772738, 1.24741, 0.729169, 1.95606)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n3y72")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.840954, 0.541107, 0, -0.203044, 0.315558, 0.926929, 0.501567, -0.779504, 0.375238, 0, 3.68663, 0)
